@@ -14,6 +14,6 @@ git clone git@github.com:tryber/sd-04-live-lectures.git
 
 ### Estrutura
 
-Todo conteudo dado em aulas estara armazenado na pasta do seu tema!
+Todo conteudo dado em aulas estara no seu respectivo Pull Request!
 
 ---
