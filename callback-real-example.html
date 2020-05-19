@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Example</title>
+</head>
+
+<body>
+    <ul></ul>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        // Bora ver um exemplo eral ?
+
+        // Vamos fazer uma requisição que retorna aleatoriamente uma piada #quaseAlberto 
+        // sobre um assunto passado como parâmetro. Para isso utilizaremos a 
+        // função getJSON do jQuery. A função getJSON recebe uma URL com o 
+        // endereço da requisição e uma callback com o código a ser executado 
+        // quando a requisição retornar.
+        const appendAlberto = (joke) => {
+            let ul = document.querySelector('ul');
+            let li = document.createElement('li');
+            li.innerHTML = joke;
+            ul.appendChild(li);
+        }
+
+        // OMG
+        // callback hell
+        // Amanha vamos refatorar usando Promises
+        $.getJSON(
+            'https://icanhazdadjoke.com/search?term=work',
+            data => {
+                appendAlberto(data.results[0].joke);
+                $.getJSON(
+                    'https://icanhazdadjoke.com/search?term=ghost',
+                    data => {
+                        appendAlberto(data.results[0].joke);
+                        $.getJSON(
+                            'https://icanhazdadjoke.com/search?term=pizza',
+                            data => {
+                                appendAlberto(data.results[0].joke)
+                                $.getJSON(
+                                    'https://icanhazdadjoke.com/search?term=wolf',
+                                    data => {
+                                        appendAlberto(data.results[0].joke)
+                                        $.getJSON(
+                                            'https://icanhazdadjoke.com/search?term=ant',
+                                            data => appendAlberto(data.results[0].joke)
+                                        );
+                                    }
+                                );
+                            }
+                        );
+                    }
+                );
+            }
+        );
+    </script>
+</body>
+
+</html>
