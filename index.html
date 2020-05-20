@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Live Lecture 10.3</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    <script>
+        // function getPiadaDeOutraUrl() {
+        //     fetch('google.com') // Estamos buscando agora do google, vulgo acessando outra API
+        //         .then(resultado => console.log(resultado))
+        // }
+
+        // Qui zona bora refatora
+        // Quero retirar o termo 'ghost' da lista de piadas sem alterar as urls. Como faço?
+
+        // const getRandomJoke = (term, funcDeCallback) => {
+        //     $.getJSON(
+        //         `https://icanhazdadjoke.com/search?term=${term}`, // busca dessa API
+        //         function (data) { // Pego o retorno da API
+        //             appendJoke(data.results[0].joke) // Coloco dado no HTML
+        //             funcDeCallback ? funcDeCallback() : undefined // Verifico se tem uma proxima callback para ser executada, se sim executo ela
+        //         }
+        //     )
+        // }
+
+
+        // getRandomJoke('spider',
+        //     getRandomJoke('ghost',
+        //         getRandomJoke('pizza',
+        //             getRandomJoke('wolf',
+        //                 getRandomJoke('ant')
+        //             )
+        //         )
+        //     )
+        // )
+
+
+        // Que tal usarmos Promises?! Atente para o comportamento da função $.getJSON(). 
+        // Ela recebe dois parâmetros: a URL com a requisição que deve ser feita e uma callback,
+        // ou seja, uma função que ela irá chamar uma vez feita a requisição. No caso, 
+        // ela passa como parâmetro para a callback os dados retornados pela requisição. 
+        // Essa é a callback que lida com os dados de uma requisição bem sucedida.
+
+        const appendJoke = (joke) => {
+            let ul = document.querySelector("ul")
+            let li = document.createElement("li")
+            li.innerHTML = joke
+            ul.appendChild(li)
+        }
+
+        const getRandomJokePromise = async (term) => {
+            await new Promise((resolve, reject) => {
+                $.getJSON(
+                    `https://icanhazdadjoke.com/search?term=${term}`, // Chama API -> assicrona
+                    (data) => {
+                        appendJoke(data.results[0].joke)
+                        resolve('ghost')
+                    },
+                    (error) => {
+                        reject(error)
+                    }
+                )
+            })
+        }
+
+        // $.getJSON()
+        // 1 parametro -> URL
+        // 2 parametro funcao callback de sucesso
+        // 3 parametro funcao callback de erro
+
+
+        getRandomJokePromise("spider")
+            .then((data) => getRandomJokePromise(data)) // Sincrona Sequecial
+            .catch((error) => /* Deu ruim volta la encima e segue o baile*/)
+
+        // Bora refatorar com async e wait ?
+        async function getJokes() {
+            try {
+                await getRandomJokePromise('wolf')
+                await getRandomJokePromise('pizza')
+                await getRandomJokePromise('ghost')
+                await getRandomJokePromise('spider')
+            } catch (error) {
+                funcaoTrataMeuErro(erro)
+                throw new Error('deu ruim brasil')
+            }
+        }
+
+        getJokes()
+
+    </script>
+</head>
+
+<body>
+    <ul>
+    </ul>
+</body>
+
+</html>
