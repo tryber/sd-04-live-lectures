@@ -10,6 +10,13 @@ Basta clonar o repositorio
 git clone git@github.com:tryber/sd-04-live-lectures.git
 ```
 
+Em seguida acessar a branch do Pull Request da aula seguindo o padrão de nomeclatura das branchs **live-lectures/(nome-branch-aula)**
+
+Exemplo:
+```sh
+git checkout -b live-lectures/es6-part3
+```
+
 ---
 
 ### Estrutura
