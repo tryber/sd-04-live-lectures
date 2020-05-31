@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "test": "jest --watchAll"
+    },
+    "devDependencies": {
+        "jest": "^26.0.1"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.0"
+    }
+}
