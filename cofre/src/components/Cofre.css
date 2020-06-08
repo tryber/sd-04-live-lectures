@@ -1,0 +1,25 @@
+.safe {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .keyboard-element {
+    width: 100%;
+  }
+  
+  .keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px black solid;
+    width: 150px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  
+  .keyboard-button {
+    width: 50px;
+    height: auto;
+    border: 1px cyan solid;
+  }
+  
