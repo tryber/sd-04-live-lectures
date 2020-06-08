@@ -1,26 +1,14 @@
-# Repositorio de aulas ao vivo para estudante da turma 4
+# Nosso Cofre 
 
-Este repositório armazena os códigos e scripts fornecidos durante as palestras ao vivo pelos especialistas da Trybe.
 
-## Começando
+**A especificação é a seguinte:**
 
-Basta clonar o repositorio
+Nosso componente cofre deve ser capaz de receber qualquer elemento como filho e renderizá-lo mediante digitação de senha num teclado numérico virtual. 
+  
+**Como props ele deve receber:**
 
-```sh
-git clone git@github.com:tryber/sd-04-live-lectures.git
-```
+- Um children (obrigatório);
 
-Em seguida acessar a branch do Pull Request da aula seguindo o padrão de nomeclatura das branchs **live-lectures/(nome-branch-aula)**
+- A correctPassword, a senha correta (obrigatória);
 
-Exemplo:
-```sh
-git checkout -b live-lectures/es6-part3
-```
-
----
-
-### Estrutura
-
-Todo conteudo dado em aulas estara no seu respectivo Pull Request!
-
----
+- O objeto (opcional) com dois elementos: safeOwner, com o nome da pessoa dona do cofre e o alertMessage, com uma frase personalizada para o caso do acesso ao cofre ser negado com uma senha incorreta.
