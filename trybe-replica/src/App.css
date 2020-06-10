@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #0fa36b;
+}
+
+a {
+  padding: 5rem;
+  color: white;
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+img {
+  height: 30px;
+}
