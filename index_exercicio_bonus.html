@@ -1,0 +1,129 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducao ao Redux</title>
+  <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+</head>
+
+<body>
+  <div>
+    Contador: <span id="value">0</span>
+    <br>
+    Contador Incrementado: <input type="number" id="contadorIncrementado" />
+    <br>
+    Contador Decrementado: <input type="number" id="contadorDecrementado" />
+    <br>
+    <button id="increment">+</button>
+    <button id="decrement">-</button>
+    <br>
+    Os botões foram clicado <span id="clickCount">x</span> vezes
+    <br>
+    Valores recebidos por click foram: <span id="addedValues">x</span>
+  </div>
+</body>
+<script>
+  // Bônus
+  // VIEW / UI
+  // Agora você irá incrementar o código 
+  // que foi feito durante a aula ao vivo.
+
+  // Faça um campo que recebe um valor e 
+  // esse será o valor aplicado ao botão incremento.
+
+  // Faça um campo que recebe um valor e 
+  // esse será o valor aplicado ao botão decremento.
+
+  // Armazene um outro valor no state, chamado clickCount. 
+  // Este campo vai contar o número de vezes que qualquer botão na tela foi clicado.
+
+  // Armazene um array no state que guarda o valor 
+  // individual que foi adicionado a cada click em qualquer um dos três botões.
+
+  const INITIAL_STATE = {
+    contador: 0,
+    incrementValue: 0,
+    decrementValue: 0,
+    addedValues: []
+  }
+
+  function changeState(state, action) {
+
+    const valor = action.type === 'INCREMENT' ?  state.incrementValue : state.decrementValue
+
+    return {
+      ...state,
+      contador: state.contador + valor,
+      addedValues: [...state.addedValues, valor]
+    }
+  }
+
+  function counterReducer(state = INITIAL_STATE, action) {
+    console.log("Antes de atualizar", state)
+    console.log(action)
+    switch (action.type) {
+      case 'INCREMENT':
+        return changeState(state, action)
+      case 'DECREMENT':
+        return changeState(state, action)
+      case 'DECREMENT_VALUE':
+        return {
+          ...state,
+          decrementValue: action.value
+        }
+      case 'INCREMENT_VALUE':
+        return {
+          ...state,
+          incrementValue: action.value
+        }
+      default:
+        return state;
+    }
+  }
+
+  const store = Redux.createStore(counterReducer);
+
+  document.getElementById('increment')
+    .addEventListener('click', () => {
+
+      const actionIncrement = { type: 'INCREMENT' };
+      store.dispatch(actionIncrement)
+
+    })
+
+  document.getElementById('decrement')
+    .addEventListener('click', () => {
+
+      const actionDecrement = { type: 'DECREMENT' };
+      store.dispatch(actionDecrement)
+
+    })
+
+  document.getElementById('contadorDecrementado')
+    .addEventListener('change', (event) => {
+      const actionDecrementValue = {
+        type: 'DECREMENT_VALUE', value: parseInt(`-${event.target.value}`)
+      }
+
+      store.dispatch(actionDecrementValue)
+    })
+
+  document.getElementById('contadorIncrementado')
+    .addEventListener('change', () => {
+      const actionIncrementValue = {
+        type: 'INCREMENT_VALUE', value: parseInt(event.target.value)
+      }
+      store.dispatch(actionIncrementValue)
+    })
+
+
+  store.subscribe(() => {
+    console.log("Depois de atualizar", store.getState())
+    document.getElementById('value').innerHTML = store.getState().contador.toString()
+    document.getElementById('clickCount').innerHTML = store.getState().addedValues.length;
+    document.getElementById('addedValues').innerHTML = store.getState().addedValues;
+  })
+</script>
+
+</html>

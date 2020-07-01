@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducao ao Redux</title>
+  <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+</head>
+
+<body>
+  <div>
+    Contado: <span id="value">0</span>
+    <button id="increment">+</button>
+    <button id="decrement">-</button>
+    <button id="multi">10</button>
+  </div>
+</body>
+<script>
+
+  // this.state = {
+  //   dataReducer: [],
+  //   counter: 0
+  // }
+
+  // O combineReducers monta estados assim /\
+
+  // combineReducers({
+  //   data,
+  //   counter
+  // })
+
+  function data(state = [], action) {
+
+  }
+
+  function counter(state = 0, action) {
+    // Reducer recebe o state de toda minha APP -
+    // Action -> Oque deve ser atualizado e qual ação executada
+    console.log('Antes de alterar o state', state)
+    console.log(action)
+    switch (action.type) {
+      case 'INCREMENT':
+        return state + action.value;
+      case 'DECREMENT':
+        return state - action.value;
+      default:
+        return state;
+    }
+  }
+
+
+  const store = Redux.createStore(counter);
+
+  document.getElementById('increment')
+    .addEventListener('click', () => {
+
+      const actionIncrement = { type: 'INCREMENT', value: 1 };
+      store.dispatch(actionIncrement)
+
+    })
+
+  document.getElementById('decrement')
+    .addEventListener('click', () => {
+
+      const actionDecrement = { type: 'DECREMENT', value: 1 };
+      store.dispatch(actionDecrement)
+
+    })
+
+  document.getElementById('multi')
+    .addEventListener('click', () => {
+      store.dispatch({ type: 'INCREMENT', value: 10 })
+    })
+
+  store.subscribe(() => document.getElementById('value').innerHTML = store.getState().toString())
+</script>
+
+</html>
