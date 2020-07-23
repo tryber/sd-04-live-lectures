@@ -1,0 +1,48 @@
+* {
+  font-family: 'Montserrat', Sans-serif;
+}
+
+.alert-light {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+
+.red-light {
+  background-color: red;
+  text-align: center;
+}
+
+.green-light {
+  background-color: green;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  border: solid 2px black;
+}
+
+.complete-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.interactions-panel {
+  display: flex;
+  width: auto;
+}
+
+.panel * {
+  margin: 10px;
+}
+
+.energy-gauge {
+  font-size: 50px;
+}
+
+.energy-warning {
+  font-size: 25px;
+}
