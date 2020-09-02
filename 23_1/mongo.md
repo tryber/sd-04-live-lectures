@@ -172,8 +172,7 @@ db.inventory.find({ status: "A" }).limit(1);
 
 **skip**
 ```js
-db.inventory.find().limit(2);
-db.inventory.find({ status: "A" }).limit(1);
+db.inventory.find().skip(2);
 ```
 
 **skip() e limit()**
