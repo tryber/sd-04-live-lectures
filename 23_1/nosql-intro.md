@@ -56,3 +56,9 @@
 ### Comparação de Complexidade x Escalabilidade
 
 ![](imgs/sizeComplexity.png)
+
+### Mais links 
+
+* [StackShare](https://stackshare.io/stacks)
+* [SQL x NoSQL](http://db4beginners.com/blog/sql-ou-nosql/)
+* [Dani Monteiro](https://github.com/DaniMonteiroDBA)
