@@ -9,6 +9,14 @@
 * Operadores de elementos: `$exists`.
 * Remover documentos, coleção e banco de dados:  `deleteOne`, `deleteMany`, `db.collection.drop` e `db.dropDatabase()`.
 
+## Clientes mongo
+
+* [Compass](https://www.mongodb.com/products/compass)
+* [Monogo for vscode](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode)
+* [mongosh](https://github.com/mongodb-js/mongosh)
+* [mongo-hack](https://www.github.com/tylerbrock/mongo-hacker/)
+* [Todas as Ferramentas](https://docs.mongodb.com/tools/)
+
 ## Como exportar/importar um `dump` do mongo
 
 *Obs: Esses comandos devem ser executados fora do mongoshell*
@@ -18,7 +26,9 @@
 mongodump --db=test --out=/data/backup/
 
 # importar um dump
-mongoimport --db class --collection superheroes <caminho_do_arquivo>
+mongoimport --db comics --collection superheroes <caminho_do_arquivo>
+
+mongo [database] <file>.json
 ```
 
 [Documentação sobre mongodump e mongorestore](https://docs.mongodb.com/manual/tutorial/backup-and-restore-tools/)
@@ -98,6 +108,20 @@ db.filmes.find({ $or: [{ ano: { $gt:2000 } }, { "avaliacao.bom": { $gte: 8 } }] 
 **Operadores `$not` e `$nor`** 
 
 ```js
+db.filmes.find({ano: {
+  $not: {$gte: 2000}}
+});
+
+db.filmes.find({nor: [
+  { ano: { $lt: 2020 } }, 
+  { "avaliacao.bom": { $lt: 7 } }
+]);
+
+// equivalente a 
+db.filmes.find({$or: [
+  { ano: { $gte: 2020 } }, 
+  { "avaliacao.bom": { $gte: 7 } }
+]);
 ```
 
 ## Operadores de elementos

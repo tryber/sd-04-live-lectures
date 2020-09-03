@@ -1,5 +1,3 @@
-use aula-filter-operators
-
 db.filmes.insertMany(
   [
     { "titulo": "O Planeta dos Macacos", "ano": 1968, "diretor": "Franklin J", "avaliacao": { "bom": 5, "medio": 6, "ruim": 4 } },
