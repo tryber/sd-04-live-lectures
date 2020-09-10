@@ -220,10 +220,9 @@ db.artists.updateOne(
 db.artists.updateOne(
   { _id: 1 },
   { 
-    $push: {
+    $addToSet: {
       members: { 
-        $each: ['Paul McCartney', 'George Harrison', 'Ringo Starr', 'John Lennon'],  
-        $sort: 1
+        $each: ['Paul McCartney', 'George Harrison', 'Ringo Starr', 'John Lennon']
       }
     }
   }
