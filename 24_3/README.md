@@ -36,10 +36,6 @@ db.artists.find({ tags: { $all: [ "Hard Rock", "American", "70s"] } });
 
 ## Array filters
 
-
-
-## Operador `$elemMatch`
-
 ```js
 db.artists.insertOne({ 
   name: 'Pink Floyd', 
@@ -79,18 +75,12 @@ db.artists.updateOne(
   } },
   { arrayFilters: [ {'elemento.title': 'Wish You Were Here'} ]}
 );
+```
 
-db.artists.updateOne(
-  { name: 'Beach Boys' },
-  {
-    $push: { 
-      albums: { 
-        name: 'Pet Sounds', releaseYear: 1965, duration: 36, awards: ['Grammy Hall of Fame Award']
-      }
-    }
-  },
-);
 
+## Operador `$elemMatch`
+
+```js
 db.artists.find(
   {
     'albums': {
@@ -112,7 +102,6 @@ db.artists.find(
   { _id: false, name: true, 'albums.title': true  }
 );
 ```
-
 ## Operador `$expr`
 
 ```js
@@ -154,6 +143,18 @@ db.artists.find(
 );
 ```
 
+## Operador `$mod`
+
+```js
+db.artists.updateOne({ name: 'Pink Floyd'}, { $set: { totalAlbums: 15 } });
+db.artists.updateOne({ name: 'The Beatles'}, { $set: { totalAlbums: 11 } });
+db.artists.updateOne({ name: 'Led Zeppelin'}, { $set: { totalAlbums: 9 } });
+db.artists.updateOne({ name: 'Rolling Stones'}, { $set: { totalAlbums: 29 } });
+
+db.artists.find({totalAlbums: { $mod: [3, 0] }}, { name: true, totalAlbums: true});
+db.artists.find({totalAlbums: { $mod: [5, 0] }}, { name: true, totalAlbums: true});
+```
+
 ## Operador `$regex`
 
 ```js
@@ -183,10 +184,6 @@ db.artists.find({ description: { $regex: /^Pink Floyd were/ } }, { name: true })
 db.artists.find({ description: { $regex: /influential rock groups in history.$/ } }, { name: true });
 ```
 
-
-## Operador `$mod`
-
-#TODO
 
 ## Criando índices e utilizando o operador `$text`
 
