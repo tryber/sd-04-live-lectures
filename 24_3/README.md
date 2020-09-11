@@ -3,6 +3,12 @@
 * Operadores `$all`, `arrayFilters`, `$elemMatch`, `$size`, `$expr`, `$regex`;
 * Como criar índices e utilizando o operador `$text`
 
+## Importando a coleção
+
+```bash
+mongoimport --db colecaoCDs --collection artists artists.json --drop
+```
+
 ## Operador `$all`
 
 ```js
