@@ -207,6 +207,7 @@ db.bandasBrasileiras.insertOne({
   description: 'Os Mutantes é uma banda brasileira de rock psicodélico formada durante o Movimento Tropicalista no ano de 1966, em São Paulo, por Arnaldo Baptista, Rita Lee e Sérgio Dias. Também participaram do grupo Liminha e Dinho Leme.'
 });
 
+// criando índice na língua portuguesa
 db.bandasBrasileiras.createIndex({ description: "text" }, { default_language: "portuguese" })
 
 db.bandasBrasileiras.find(
