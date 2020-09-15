@@ -322,6 +322,12 @@ db.orders.aggregate([
     },
   },
   {
+    $group: {
+      _id: '_id',
+      products: { $sum: { $size: '' } }
+    }
+  }
+  {
     $limit: 5
   }
 ]).pretty();
