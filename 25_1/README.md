@@ -60,7 +60,9 @@ db.friends.aggregate([
       _id: 'null',
       totalEpisodios: { $sum: 1 },
       duracaoTotal: { $sum: '$runtime' },
-      mediaDuracao: { $avg: '$runtime' }
+      mediaDuracao: { $avg: '$runtime' },
+      menorDuracao: { $min: '$runtime' },
+      maiorDuracao: { $max: '$runtime' }
     }
   }
 ]);
@@ -70,6 +72,7 @@ db.friends.aggregate([
     $group: {
       _id: '$season',
       totalEpisodios: { $sum: 1 },
+      duracaoTotal: { $sum: '$runtime' },
       mediaDuracao: { $avg: '$runtime' }
     }
   }
@@ -89,6 +92,7 @@ db.friends.aggregate([
   },
   {
     $match: {
+      season: 3,
       totalEpisodios: { $gt: 24 }
     }
   }
@@ -108,7 +112,8 @@ db.friends.aggregate([
   },
   {
     $sort: {
-      totalEpisodios: -1
+      totalEpisodios: -1,
+      _id: 1
     }
   }
 ]);
@@ -169,6 +174,16 @@ db.pokemons.aggregate([
 ]);
 
 db.pokemons.aggregate([
+  {
+    $match: {
+      name: 'Bulbasaur'
+    }
+  },
+  { $unwind: '$type' },
+  { $project: { name: true, type: true }}
+]);
+
+db.pokemons.aggregate([
   { $unwind: '$type' },
   {
     $group: {
@@ -215,9 +230,15 @@ db.orders.aggregate([
     }
   },
   {
-    $limit: 10
+    $unwind: '$customer'
+  },
+  {
+    $project: { 'customer.CustomerName': true }
+  },
+  {
+    $limit: 1
   }
-]);
+]).pretty();
 
 db.orders.aggregate([
   { $unwind: '$lineItems' },
@@ -226,16 +247,17 @@ db.orders.aggregate([
       from: 'products',
       localField: 'lineItems.prodId',
       foreignField: '_id',
-      as: 'product'
+      as: 'products'
     }
   },
   {
-    $limit: 5
+    $limit: 1
   }
-]);
+]).pretty();
 
 db.orders.aggregate([
   { $unwind: '$lineItems' },
+  { $sort: { _id: 1 } },
   {
     $lookup: {
       from: 'products',
@@ -260,7 +282,7 @@ db.orders.aggregate([
 var categorias = ['Alimentação', 'Limpeza', 'Congelados e frios', 'Higiene pessoal', 'Hortifrúti', 'Bebidas']; 
 
 // Adicionando campo categoria
-print(categorias[(Math.random() * myArray.length) | 0]);
+print(categorias[(Math.random() * categorias.length) | 0]);
 
 db.products.find({}).forEach(function (doc) {
   print(doc._id)
@@ -281,6 +303,7 @@ db.products.aggregate([
 
 db.orders.aggregate([
   { $unwind: '$lineItems' },
+  { $sort: { _id: 1 } },
   {
     $lookup: {
       from: 'products',
@@ -288,11 +311,9 @@ db.orders.aggregate([
       pipeline: [
         {
           $match: {
+            category: 'Limpeza',
             $expr: { 
-              $and: [
-                { $eq: ['$_id', '$$productId'] },
-                { category: 'Limpeza' }
-              ]
+              $eq: ['$_id', '$$productId'],
             }  
           }
         }   
@@ -303,7 +324,7 @@ db.orders.aggregate([
   {
     $limit: 5
   }
-]);
+]).pretty();
 ```
 
 
