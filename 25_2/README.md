@@ -1,5 +1,6 @@
 # Aula 25.2 - Aggregation Framework - Parte 2
 
+* Revisão de Lookup
 * Operador `$addFields`;
 * Operadores de cálculo `$add`, `$subtract`, `$multiply`, `$divide` e `$abs`;
 * Operador `$round`, `$ceil`, `$floor`;
@@ -9,7 +10,15 @@
 ```bash
 cd 25_2
 mongorestore --drop --db pokemongo --collection pokemons dumps/samples_pokemon.bson
+mongorestore --drop --db pokemongo --collection customers dumps/DBEnvyLoad_customers.bson
+mongorestore --drop --db pokemongo --collection orders dumps/DBEnvyLoad_orders.bson
+mongorestore --drop --db pokemongo --collection products dumps/DBEnvyLoad_products.bson
 ```
+
+### Revisando Lookup
+
+[Exemplo](./lookup-exemplo1.js)
+
 ## Adicionando novos campos
 
 ```js
