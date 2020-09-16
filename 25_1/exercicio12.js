@@ -4,13 +4,12 @@ db.orders.aggregate([
   {
     $lookup: {
       from: 'products',
-      let: { productId: '$lineItems.prodId', prodCount: '$lineItems.prodCount' },
+      localField: '$lineItems.prodId',
+      foreignField: '$_id',
       pipeline: [
         {
           $match: {
-            $expr: {
-              $eq: ['$_id', '$$productId'],
-            }
+            category: 'Limpeza'
           }
         },
         {
@@ -32,5 +31,6 @@ db.orders.aggregate([
       quantidade: { $sum: '$lineItems.prodCount' },
     }
   },
-  { $sort: { quantidade: -1 }}
+  { $sort: { quantidade: -1 } },
+  { $limit: 5 }
 ]);
