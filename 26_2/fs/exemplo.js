@@ -1,8 +1,15 @@
 const fs = require("fs");
 
-fs.readFile("./arquivo.txt", (err, content) => {
+const getBetterMessage = (error) => {
+  if (error.code === "ENOENT") return `Arquivo não encontrado: ${error.path}`;
+
+  return error.message;
+};
+
+fs.readFile("./arquivo2.txt", (err, content) => {
+  console.log(err);
   if (err) {
-    console.error(`Erro ao ler o arquivo: ${err.message}`);
+    console.error(`Erro ao ler o arquivo: ${getBetterMessage(err)}`);
     return;
   }
 

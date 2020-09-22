@@ -1,13 +1,16 @@
 const fs = require("fs");
+const util = require('util');
 
-function readFilePromise(fileName) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(fileName, (err, content) => {
-      if (err) return reject(err);
-      resolve(content);
-    });
-  });
-}
+// function readFilePromise(fileName) {
+//   return new Promise((resolve, reject) => {
+//     fs.readFile(fileName, (err, content) => {
+//       if (err) return reject(err);
+//       resolve(content);
+//     });
+//   });
+// }
+
+const readFilePromise = util.promisify()
 
 readFilePromise("./arquivo.txt")
   .then((content) => {
