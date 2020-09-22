@@ -11,6 +11,8 @@ const getAllCharacters = async (list, next) => {
 
   const newResults = [...results, ...data.results];
 
+  console.log(newResults.length);
+
   return data.next ? getAllCharacters(newResults, data.next) : newResults;
 };
 
