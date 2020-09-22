@@ -1,0 +1,1 @@
+// vamos transformar o exemplo2 de promises usando async/await
