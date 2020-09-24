@@ -27,7 +27,11 @@ presentation:
 
 <!-- slide vertical=true -->
 
-## SW Api
+## [🌍 SW Api 🌍](https://swapi.dev/)
+
+<!-- slide vertical=true -->
+
+### [🏁 Checkpoint 🏁](https://wall.sli.do/event/aglwhjui?section=1a7f5e72-14d6-4158-9e10-0fd3508432d0)
 
 <!-- slide -->
 
@@ -40,6 +44,10 @@ npm i express
 <!-- slide-vertical=true -->
 
 SHOW THE CODE!
+
+<!-- slide vertical=true -->
+
+### [🏁 Checkpoint 🏁](https://wall.sli.do/event/aglwhjui?section=1a7f5e72-14d6-4158-9e10-0fd3508432d0)
 
 <!-- slide -->
 ## NODEMON
@@ -55,16 +63,33 @@ npm i -D nodemon
 },
 ```
 
+<!-- slide vertical=true -->
+
+### [🏁 Checkpoint 🏁](https://wall.sli.do/event/aglwhjui?section=1a7f5e72-14d6-4158-9e10-0fd3508432d0)
+
 <!-- slide -->
 
 ## Middlewares (rotas)
 
+<!-- slide vertical=true -->
+
+### [🏁 Checkpoint 🏁](https://wall.sli.do/event/aglwhjui?section=1a7f5e72-14d6-4158-9e10-0fd3508432d0)
+
 <!-- slide -->
+
 ## Middlewares (app.use)
+
+<!-- slide vertical=true -->
+
+### [🏁 Checkpoint 🏁](https://wall.sli.do/event/aglwhjui?section=1a7f5e72-14d6-4158-9e10-0fd3508432d0)
 
 <!-- slide -->
 
 ## Router
+
+<!-- slide vertical=true -->
+
+### [🏁 Checkpoint 🏁](https://wall.sli.do/event/aglwhjui?section=1a7f5e72-14d6-4158-9e10-0fd3508432d0)
 
 <!-- slide -->
 
@@ -74,3 +99,21 @@ npm i -D nodemon
 npm i express-rescue
 ```
 
+<!-- slide vertical=true -->
+
+### [🏁 Checkpoint 🏁](https://wall.sli.do/event/aglwhjui?section=1a7f5e72-14d6-4158-9e10-0fd3508432d0)
+
+
+<!-- slide  -->
+
+## O que aprendemos?
+
+* HTTP.
+* Como criar nossa primeira API com 
+Express;
+* O que são rotas e middlewares;
+* Tratando erros com middlewares de erros e express-rescue;
+
+<!-- slide -->
+
+### [🤔 Dúvidas 🤔](https://wall.sli.do/event/aglwhjui?section=1a7f5e72-14d6-4158-9e10-0fd3508432d0)
