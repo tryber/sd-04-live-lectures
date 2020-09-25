@@ -10,7 +10,7 @@
 ​
 ```bash
 http -v POST postman-echo.com/post\?email=turma4@betrybe.com \
-name=Turma04 \
+name="Turma 04" \
 students=56
 ```
 ​
