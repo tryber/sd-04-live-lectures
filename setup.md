@@ -2,7 +2,7 @@
 
 Obs 1: não copiar o `$`.
 
-Obs 2: Lembre-se de exportar seus bancos antes de fazer as operações abaix/
+Obs 2: Lembre-se de exportar seus bancos antes de fazer as operações abaixo.
 
 ```bash
 # Removendo mysql antigo
