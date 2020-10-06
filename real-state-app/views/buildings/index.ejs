@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apartamentos</title>
+</head>
+<body>
+  <h1>Lista de Apartamentos</h1>
+
+  <% if (user) { %> 
+    Olá, <%= user.name %>
+    
+    <a href="/my-buildings">Meus Apartamentos</a>
+
+    <a href="/buildings/add">Novo Apartamento</a>
+
+    <a href="/logout">Logout</a>
+  <% } else { %>
+    <a href="/login">Login</a>
+  <% } %>
+
+  <ul>
+    <% buildings.forEach((building) => { %>
+      <li><a href="/buildings/<%= building.id %>"><%= building.address %></a></li>
+    <% }) %>
+  </ul>
+</body>
+</html>
