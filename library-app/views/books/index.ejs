@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <h1>Livros</h1>
+
+  <%= books.length %> livros cadastrados
+
+  <% if (message) { %>
+    <p class="alert alert-success"><%= message %></p>
+  <% } %> 
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% books.forEach(book => { %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.author %></td>
+          <td>
+            <a href="/books/<%= book.id %>" class="btn btn-primary btn-small">Ver</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <a href="/books/add" class="btn btn-primary">Novo livro</a>
+</body>
+
+</html>
