@@ -105,8 +105,8 @@ Lembre-se de usar o middleware de autenticação em todos os endpoints onde vá 
 
 ```js
 // Exemplos
-app.get('/receitas/:id', middlewares.auth(false), recipesController.show); // pode ou não ter o usuário logado para acessar o middleware implementado em ecipesController.show
-app.get('/receitas/add', middlewares.auth(), recipesController.add); // o usuário deve estar logado para acessar o middleware implementado em ecipesController.add.
+app.get('/receitas/:id', middlewares.auth(false), recipesController.show); // pode ou não ter o usuário logado para acessar o middleware implementado em recipesController.show
+app.get('/receitas/add', middlewares.auth(), recipesController.add); // o usuário deve estar logado para acessar o middleware implementado em recipesController.add.
 
 // Sempre que for usar o objeto user na view lembre-se de passar ele para view usando o req.user
 // considere que o exemplo abaixo está no arquivo controller/recipes_controller.js
