@@ -98,3 +98,19 @@ return res.redirect(redirect || '/');
 ## Fazer requisito 1
 
 A partir daqui você pode começar o requisito 1.
+
+## Bônus
+
+Lembre-se de usar o middleware de autenticação em todos os endpoints onde vá ser nescessário usar o objeto com o usuário que está logado.
+
+```js
+// Exemplos
+app.get('/receitas/:id', middlewares.auth(false), recipesController.show); // pode ou não ter o usuário logado para acessar o middleware implementado em ecipesController.show
+app.get('/receitas/add', middlewares.auth(), recipesController.add); // o usuário deve estar logado para acessar o middleware implementado em ecipesController.add.
+
+// Sempre que for usar o objeto user na view lembre-se de passar ele para view usando o req.user
+// considere que o exemplo abaixo está no arquivo controller/recipes_controller.js
+show = (req,res) => {
+  res.render('recipes/show', { user: req.user })
+}
+```
