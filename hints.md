@@ -118,7 +118,7 @@ show = (req,res) => {
 Na sua view onde for nescessário renderizar algo de acordo com o usuário estar logado ou não faça algo do tipo:
 
 ```html
-<% if (user) %>
+<% if (user) { %>
    Usuário logado: <%=user.name %>
 <% } else { %>
     Usuário deslogado
