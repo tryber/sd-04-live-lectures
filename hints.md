@@ -5,7 +5,7 @@
 1. Instalar lib
 
 ```
-npm i dotenv
+npm i dotenv -D
 ```
 
 2. Criar o arquivo `.env` usando o modelo abaixo:
@@ -59,10 +59,10 @@ const connection = () => {
 module.exports = connection;
 ```
 
-## Implementar os métodos `findByEmail` e `findById`. Abaixo está uma implementação do método `findByEmail`
+## Implementar os métodos `findByEmail` e `findById`. 
 
 ```js
-
+// Abaixo está uma implementação do método `findByEmail`
 const findByEmail = async (email) => {
   return connection()
     .then((db) =>
@@ -81,6 +81,10 @@ const findByEmail = async (email) => {
  * Busca um usuário através do seu ID
  * @param {string} id ID do usuário
  */
+ 
+ const findById = async (id) => {
+   // implementar o método findById usando o método findByEmail como referência
+ }
 ```
 
 ## Fazer o login redirecionar para a tela inicial
