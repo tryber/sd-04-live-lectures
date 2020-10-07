@@ -98,4 +98,3 @@ return res.redirect(redirect || '/');
 ## Fazer requisito 1
 
 A partir daqui você pode começar o requisito 1.
-e
