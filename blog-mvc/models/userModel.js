@@ -9,10 +9,34 @@ const findAll = async () => {
 };
 
 // buscar usuário por id
-const findById = () => { };
+const findById = (id) => { 
+  return connection()
+    .then((db) =>
+      db
+        .getTable('users')
+        .select(['id', 'email', 'password', 'first_name', 'last_name'])
+        .where('id = :id_param')
+        .bind('id_param', id)
+        .execute(),
+    )
+    .then((results) => results.fetchOne())
+    .then(([id, email, password, name, lastName]) => ({ id, email, password, name, lastName }));
+};
 
 // buscar usuário por email
-const findByEmail = () => { };
+const findByEmail = (email) => { 
+  return connection()
+    .then((db) =>
+      db
+        .getTable('users')
+        .select(['id', 'email', 'password', 'first_name', 'last_name'])
+        .where('email = :email_param')
+        .bind('email_param', email)
+        .execute(),
+    )
+    .then((results) => results.fetchOne())
+    .then(([id, email, password, name, lastName]) => ({ id, email, password, name, lastName }));
+};
 
 // inserir usuário
 const add = (email, password,  firstName, lastName) => { 
@@ -52,7 +76,11 @@ const remove = (id) => {
   );
 };
 
+const isValid = (email) => {
+  return typeof email && email === 'string' && email !== ''; 
+}
+
 module.exports = {
-  findAll, findById, findByEmail, add, update, remove
+  findAll, findById, findByEmail, add, update, remove, isValid
 }
 
