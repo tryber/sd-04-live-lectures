@@ -14,7 +14,24 @@ const findById = async (id) => {
   }
 };
 
-const update = (id, userId, userName, title) => { };
+const update = async (id, userId, userName, title) => {
+  try {
+    const db = await connection();
+    const stmt = 
+      await db
+      .getTable('games')
+      .update()
+      .set('user_id', userId)
+      .set('user_name', userName)
+      .set('title', title)
+      .where('id = :id')
+      .bind('id', id)
+      .execute()
+   return stmt.getAffectedRowsCount();
+  } catch (error) {
+    return null;
+  }
+};
 
 module.exports = {
   findById,
