@@ -1,13 +1,5 @@
----
-presentation:
-  width: 1920
-  height: 1080
-  theme: black.css
-  previewLinks: true
----
 
-<!-- slide -->
-# 26.6 - Arquitetura MVC
+# 27.1 - Arquitetura MSC
 
 ## O que aprendemos?
 
