@@ -11,6 +11,9 @@ app.use(cors());
 app.get('/cats', catsController.index);
 app.get("/cats/:id", catsController.show);
 app.post("/cats", catsController.add);
+app.put("/cats/:id", catsController.update);
+app.delete("/cats/:id", catsController.remove);
+
 
 
 app.listen(port, () => console.log(`Example app listening on port port!`))
