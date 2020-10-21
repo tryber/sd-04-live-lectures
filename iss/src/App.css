@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.map {
+  border: 1px solid black;
+  margin: 0 auto;
+  max-width: 700px;
+}
