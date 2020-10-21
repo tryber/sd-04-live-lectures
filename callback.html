@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+    <style>
+        /* Para entender por que o modelo síncrono não é adequado a uma 
+        linguagem que roda em um browser, vamos fazer algumas modificações 
+        no nosso arquivo */
+        .square {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            transition: 2s;
+        }
+
+        .square:hover {
+            height: 400px;
+            width: 400px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square"></div>
+
+    <script>
+        // Nesse exemplo usando setTimeout, ainda sabemos aproximadamente 
+        // quando cada função vai terminar. Em casos reais, isso nem sempre 
+        // acontece.
+
+        // Por exemplo, se fazemos uma requisição para um outro site, 
+        // não sabemos quanto tempo demorará para termos a resposta, pois isso 
+        // depende de fatores fora de nosso controle, como congestionamento da rede. 
+
+        // Podemos simular isso no nosso exemplo passando um tempo aleatório para 
+        // **setTimeout**
+
+        // const fun1 = () =>
+        //     setTimeout(() => console.log('Função 1'), Math.random() * 2000);
+
+        // const fun2 = () =>
+        //     setTimeout(() => console.log('Função 2'), Math.random() * 2000);
+
+        // fun1();
+        // fun2();
+
+        // Não temos controle sobre o tempo que as funções levam para executar, 
+        // mas o que faríamos se precisássemos que elas fossem executada em ordem? 
+        // Podemos usar uma callback!!!!!
+
+
+        const fun2 = () =>
+            setTimeout(() => console.log('Função 2 callback da 1'), Math.random() * 2000);
+
+        const fun1 = (callback) => { // recebe o callback que é a fun2
+            setTimeout(
+                () => {
+                    console.log('funcao 1 foi chamada assincronamente');
+                    callback();
+                }, Math.random() * 2000
+            )
+        }
+
+        const fun3 = () => console.log('Funcao 3 sincrona');
+
+        fun1(fun2);
+        fun3()
+
+    </script>
+</body>
+
+</html>

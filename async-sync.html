@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and Sync</title>
+    <style>
+        /* Para entender por que o modelo síncrono não é adequado a uma 
+        linguagem que roda em um browser, vamos fazer algumas modificações 
+        no nosso arquivo */
+        .square {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            transition: 2s;
+        }
+
+        .square:hover {
+            height: 400px;
+            width: 400px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square"></div>
+    <script>
+        // Primeiro Exemplo 
+
+        // Exemplo código Síncrono
+        // O código é executado na mesma ordem em que aparece no programa
+
+        // const fun1 = () => console.log('Função 1')
+        // const fun2 = () => console.log('Função 2')
+
+        // console.log('Antes de chamar as funcoes')
+
+        // // fun1()
+        // // fun2()
+
+        // console.log('Depois de chamar as funcoes')
+
+        // Existe um fluxo linear no seu programa, e a ordem em que cada coisa 
+        // executa é muito bem definida. Esse é o modelo de computação síncrona 
+        // e é assim que muitas vezes as linguagens de programação funcionam, 
+        // mas não JavaScript.
+
+        // const sleep = sleepDuration => { // Simular funcoes que sao demoradas
+        //     const now = new Date().getTime();
+        //     while(new Date().getTime() < now + sleepDuration); // 12:00 < 12:03
+        // }
+
+        // const fun1 = () => {
+        //     sleep(2000)
+        //     console.log('Func 1 foi chamada')
+        // }
+
+        // const fun2 = () => {
+        //     sleep(2000);
+        //     console.log('Func 2 foi chamada')
+        // }
+
+        // Exemplo código assíncrono
+        // O fluxo de execução não necessariamente obedece à 
+        // ordem em que o código foi escrito
+
+        const fun1 = () => // -> executando por 3segs
+            setTimeout(() => console.log('Função 1'), 3000);
+
+        const fun2 = () =>
+            setTimeout(() => console.log('Função 2'), 2000);
+
+        fun1()
+        fun2()
+
+        // Vemos que a ordem da execucao mudou. 
+        // Isso acontece porque setTimeout não executa a função passada como 
+        // argumento imediatamente. Ele agenda a execução da função para algum 
+        // momento no futuro, determinado pelo segundo parâmetro. 
+
+        // Porém, ao invés de bloquear a execução do programa como no nosso 
+        // exemplo anterior, o código continua executando, de forma que o último 
+        // console.log é executado e, depois de 2 segundos, as funções são executadas.    
+
+    </script>
+</body>
+
+</html>
