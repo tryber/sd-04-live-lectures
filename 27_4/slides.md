@@ -16,12 +16,17 @@ presentation:
 1. O que é JWT;
 2. Como funciona o JWT;
 3. Como implementar o JWT;
+4. BCrypt;
 	
 <!-- slide -->
 
 ## O que é JWT?
 
-JSON WEB TOKEN.
+JSON WEB TOKEN. É stateless.
+
+<!-- slide vertical=true -->
+
+![Imagem](https://i.stack.imgur.com/0XrpT.png)
 
 <!-- slide vertical=true -->
 
@@ -33,6 +38,8 @@ JSON WEB TOKEN.
 <!-- slide vertical=true -->
 
 ## O que é Hash?
+
+É  um algorítmo que, dado um input de qualquer tamanho, gera um output com um tamanho fixo. O processo é, por definição, one-way, o que quer dizer que ele não pode ser revertido.
 
 <!-- slide vertical=true -->
 
@@ -91,3 +98,8 @@ echo eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 | base64 -d
 
 Lets`code!
 
+<!-- slide  -->
+
+## Bcrypt
+
+Lets`code!
