@@ -10,16 +10,16 @@ Este repositório armazena os códigos, scripts e passo a passo fornecidos duran
 2 - Após responder algumas coisas (apenas no primeiro acesso), ir em **Build a Cluster**.
 ![Iniciando um cluster](/images/2.png)
 
-3 - Escolha a opção **Free**. (Apenas um clutser pode ser criado gratuitamente)
+3 - Escolha a opção **Free**. (Apenas um cluster pode ser criado gratuitamente)
 ![Planos do MongoDB Atlas](/images/3.png)
 
-4 - Se quiser altere alguma coisa e ir em **Create a Cluster**. (Isso pode demorar alguns minutos)
+4 - Se quiser altere alguma coisa e depois ir em **Create a Cluster**. (Isso pode demorar alguns minutos)
 ![Criando um cluster](/images/4.png)
 
-5- Após a criação, devemos liberar o acesso a ele, ir em **Network Acess**. (Menu lateral esquerdo)
+5- Após a criação do cluster, devemos liberar o acesso a ele, indo em **Network Acess**. (Menu lateral esquerdo)
 ![Liberando acesso](/images/5.png)
 
-6 - Aqui vamos liberar acesso a um IP específico ou a todos, ir em **Add IP Address**.
+6 - Aqui vamos liberar acesso a um IP específico ou todos IP's, indo em **Add IP Address**.
 ![Inserindo um IP](/images/6.png)
 
 7- Podemos liberar nosso IP atual, ou uma lista de IP's, ou liberar qualquer acesso indo em **Allow Access From anywhere**.
