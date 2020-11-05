@@ -56,6 +56,9 @@ Este repositório armazena os códigos, scripts e passo a passo fornecidos duran
 ```
 5 - Tornando o diretório **apiHerokuMongoAtlas** um repositório git.
 ```sh
+ touch .gitignore //adicionar a pasta node_modules
+```
+```sh
  git init
 ```
 ```sh
