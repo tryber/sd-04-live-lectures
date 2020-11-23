@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS solid_example;
+
+USE solid_example;
+
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(30) NOT NULL,
+  email VARCHAR(30) NOT NULL,
+  password VARCHAR(30) NOT NULL,
+  role VARCHAR(30) NOT NULL,
+  PRIMARY KEY(id)
+);
