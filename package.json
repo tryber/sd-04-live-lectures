@@ -1,0 +1,25 @@
+{
+  "name": "sd-04-live-lectures",
+  "version": "1.0.0",
+  "description": "* Como utilizar o jest no node? * Como implementar mocks do lado do modelo. * Como implementar mocks do lado do controller.",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "jest": "^26.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tryber/sd-04-live-lectures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tryber/sd-04-live-lectures/issues"
+  },
+  "homepage": "https://github.com/tryber/sd-04-live-lectures#readme"
+}
