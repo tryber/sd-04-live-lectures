@@ -14,6 +14,18 @@ Bom, mas antes de entrarmos na parte prática, vamos entrar rapidamente um pouco
 
 ## Protocolos TCP e UDP
 
+OSI X TCP/IP
+
+![osi vs tcp/ip](./images/tcpip.png)
+
+Imagem obtida [aqui](https://www.uniaogeek.com.br/arquitetura-de-redes-tcpip/)
+
+Alguns protocolos por camada:
+
+![Modelo OSI](./images/osi.jpg)
+
+Imagem obtida [aqui](https://pplware.sapo.pt/tutoriais/networking/redes-sabe-o-que-e-o-modelo-osi/)
+
 Agora vamos relembrar um pouco sobre o que é **TCP**, **UDP** e quais as suas diferenças:
 
 * Ambos existem na camada 4 do **modelo OSI** (camada de **transporte**);
