@@ -1,9 +1,9 @@
 # 32.2 - Socket.io
 
 O **socket.io** é uma biblioteca JavaScript para aplicativos da web em tempo real. A lib é usada por inúmeras empresas e pessoas 
-desenvolvedoras.
+desenvolvedoras, para:.
 
-* Mensagens instantâneas;
+* Envio de mensagens instantâneas;
 * Análise e monitoramento em tempo real;
 * Streaming e colaboração de documentos;
 
@@ -43,10 +43,10 @@ Vamos começar iniciando um projeto Node e instalando as dependências com os se
 $ npm init -y
 ```
 ```
-npm install express socket.io cors
+$ npm install express socket.io cors
 ```
 ```
-npm install nodemon -D
+$ npm install nodemon -D
 ```
 
 Em seguinda, vamos criar dois arquivos, um para ser o **servidor** e o outro para ser o **cliente**:
