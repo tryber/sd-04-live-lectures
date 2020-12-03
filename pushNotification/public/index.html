@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://localhost:4555/socket.io/socket.io.js"></script>
+    
+    <script>
+      const socket = io('http://localhost:4555');
+
+      socket.on('notification', (data) => {
+        // Exemplo com objeto
+        const li = document.createElement('li');
+          li.textContent = data.title;
+        document.getElementById('mensagem').appendChild(li);
+          li = document.createElement('li');
+          li.textContent = data.msg;
+        document.getElementById('mensagem').appendChild(li);
+
+        // Exemplo com mensagem e alert
+        // alert(data);
+
+        // Exemplo com mensagem
+        /*const li = document.createElement('li');
+          li.textContent = data;
+        document.getElementById('mensagem').appendChild(li);*/
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="mensagem"></ul>
+  </body>
+</html>
