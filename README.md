@@ -10,9 +10,9 @@ desenvolvedoras.
 ### O que vamos aprender hoje?
 
 * Utilizar o socket.io;
-* Enviar eventos no socket.io;
+* Eventos personalizados no socket.io;
 * Enviar objetos através de eventos do socket.io;
-* Importar a lib do socket.io no frontend através do próprio server do socket.io;
+* Importar a lib do socket.io no front-end através do próprio server do socket.io;
 * Utilizar sockets para criar uma API de *push notifications*;
 
 ## Socket.io
@@ -43,7 +43,10 @@ Vamos começar iniciando um projeto Node e instalando as dependências com os se
 $ npm init -y
 ```
 ```
-npm install express socket.io body-parser
+npm install express socket.io cors
+```
+```
+npm install nodemon -D
 ```
 
 Em seguinda, vamos criar dois arquivos, um para ser o **servidor** e o outro para ser o **cliente**:
@@ -51,22 +54,23 @@ Em seguinda, vamos criar dois arquivos, um para ser o **servidor** e o outro par
 $ touch server.js
 ```
 ```
-$ touch client.js
+$ touch index.html
 ```
 
 > server.js
 
 ```
+const http = require('http');
 const express = require('express');
-const bodyParser = require('body-parser');
+const socket_io = require('socket.io');
 
-const socketIoServer = require('http').createServer();
-const io = require('socket.io')(socketIoServer);
+const socketIoServer = http.createServer();
+const io = socket_io(socketIoServer);
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get('/ping', (_, res) => {
   res.status(200).json({ message: 'pong!' });
@@ -82,9 +86,31 @@ console.log('Socket.io ouvindo na porta 4555');
 Vamos iniciar o nosso server e verificar se está tudo certo com nosso script até então:
 
 ```
-$ node server.js
+// Não esqueça de alterar no package.json
+$ npm start 
+```
+
+> client.html
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://localhost:4555/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io('http://localhost:4555');
+
+      socket.on('notification', (data) => {
+        document.getElementById('mensagem').innerHTML = data;
+      });
+    </script>
+  </head>
+  <body>
+    <div id="mensagem"></div>
+  </body>
+</html>
 ```
 
 ### Desafios
-
-- [ ]
+- [ ] Criar uma rota para notificar;
+- [ ] Implementar o client;
+- [ ] Enviar Objeto;
