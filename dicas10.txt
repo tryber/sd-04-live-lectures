@@ -1,0 +1,84 @@
+No conteúdo sobre entrada e saída de dados em Python, aprendemos como podemos fazer interfaces de linhas de comando (cli) utilizando sys.argv e input.
+
+Veja abaixo alguns exemplos:
+
+---> sys.argv
+
+import sys
+from operator import add, sub
+
+FUNCS = {
+    "soma": add,
+    "subtrai": sub
+}
+
+try:
+    _, func, n1, n2 = sys.argv
+    n1, n2 = int(n1), int(n2)
+    result = FUNCS[func](n1, n2)
+except ValueError:
+    print(
+        "argumentos incorretos de entrada, "
+        "experimente python arquivo.py soma 2 2",
+        file=sys.stderr,
+    )
+except KeyError:
+    available_functions = ", ".join(FUNCS.keys())
+    print(f"Função indisponível, tente uma destas: {available_functions}")
+else:
+    print(f"O resultado da operação {func} foi {result}")
+# para invocar o script chame "python main.py soma 2 2"
+
+---> input
+
+opcao = 1
+while opcao != 0:
+    # convertemos para inteiro pois toda entrada de dados
+    # é recebida como string
+    n1 = int(input("Digite um número:"))
+    n2 = int(input("Digite outro número:"))
+    opcao = int(
+        input(
+            """
+Escolha uma opção:
+1 - soma
+2 - subtração
+0 - sair
+"""
+        )
+    )
+    if opcao == 1:
+        print(n1 + n2)
+    elif opcao == 2:
+        print(n1 - n2)
+
+Uma prática que tem se tornado comum na comunidade Python é a criação de um arquivo com o nome __main__.py em um pacote, tornando-o assim executável através do comando python -m <nomedopacote>.
+
+.
+└── pacote
+    └── __main__.py
+
+Mas se procura algo mais robusto para a criação de interfaces de linha de comando, dê uma olhada no pacote abaixo.
+
+---> click
+
+É o pacote mais popular para criação de interfaces de linha de comando, ajudando na criação de interfaces ricas e bem documentadas.
+Para instalar a ferramenta utilize o gerenciador de pacotes pip.
+
+https://click.palletsprojects.com/en/7.x/
+
+import click
+
+@click.command()
+@click.option('--count', default=1, help='Number of greetings.')
+@click.option('--name', prompt='Your name',
+              help='The person to greet.')
+def hello(count, name):
+    """Simple program that greets NAME for a total of COUNT times."""
+    for x in range(count):
+        click.echo('Hello %s!' % name)
+
+if __name__ == '__main__':
+    hello()
+
+Quem curtiu reage com :irmao-jorel-feliz: ! 

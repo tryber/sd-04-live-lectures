@@ -1,0 +1,30 @@
+:1234: Comprehensions
+Compreensões (comprehensions) são construções que permitem que sequências sejam construídas a partir de outras sequências.
+Em Python é permitido vários tipos de compreensões,  de listas, dicionários e conjuntos.
+
+# compreensão de listas
+# cria uma nova lista com os valores dos números ao quadrado
+[numero ** 2 for numero in numeros]
+
+# compreensão de dicionários
+# cria um dicionário onde a chave é um número
+# e o valor o quadrado do número
+{numero: numero ** 2 for numero in numeros}
+
+# compreensão de conjuntos
+# cria um conjunto semelhante 
+# a sequencia de números original
+{numero for numero in numeros}
+
+# compreensões também permitem filtros através do if
+# na criação de qualquer estrutura(list, set, dict)
+[
+    numero ** 2 
+    for numero in numeros 
+    if numero % 2 == 0
+]
+
+Compreensões são uma maneira de expressar operações de map e filter.
+
+Quem viu reage com :1234: !
+￼

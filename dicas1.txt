@@ -1,0 +1,13 @@
+:py-tha-on: Pessoal, a partir de hoje teremos regularmente postadas no canal as dicas pythonicas. São dicas sobre a linguagem Python complementares ao conteúdo que será visto no curso.
+:novo: E para estrear esta novidade, convido vocês a lerem o Guia de configuração do ambiente Python, que foi feito com muito carinho para a turma de vocês!
+:pino:  Algumas instruções para usuários Windows e MacOS são um pouco diferentes, portanto deem uma olhada nos respectivos links.
+Quem curtiu reage com :py-tha-on-ney: ! (editado) 
+
+Links:
+
+https://app.betrybe.com/course/real-life-engineer/python
+
+windows: ferramentas_windows.md
+
+MacOS: ferramentas_mac.md
+

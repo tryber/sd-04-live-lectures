@@ -1,0 +1,7 @@
+Já vimos utilização de Python para fazer raspagem dados, análise de dados, sistemas de controle de estoque e até mesmo web (ver dicas pythonicas anteriores). Mas que tal analisarmos sentimento? Descobrir a partir de um texto se o sentimento presente ali é positivo ou negativo?
+Vejam a explicação de como isso pode ser feito e também o código.
+
+:projetor: https://www.youtube.com/watch?v=ywbzwTc51y4
+:pacote: folder sentibol
+
+Quem curtiu reage com :bola_de_futebol: !

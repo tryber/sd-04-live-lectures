@@ -1,0 +1,54 @@
+Definições de funções em python podem conter parâmetros com valores padrões e valores obrigatórios.
+
+def soma(a_num, other_num=1):
+    return a_num + other_num
+
+O parâmetro a_num é obrigatório, porém o other_num, caso não seja passado, o valor 1 é utilizado.
+
+print(soma(2, 2))  # 4
+
+print(soma(2))  # 3 O parâmetro other_num assume o valor padrão 1
+
+Uma outra coisa a respeito de funções é que parâmetros podem ser posicionais ou nomeados.
+
+# posicionais
+# Os argumentos são vinculados aos nomes de acordo com a ordem em que aparecem
+# ou seja, a_num se torna 2 e other_num 4
+print(soma(2, 4))
+
+# nomeados
+print(soma(other_num=7, a_num=10))
+
+Parâmetros nomeados podem ser definidos em qualquer ordem, mas sempre devem vir depois dos parâmetros posicionais.
+
+Repare que mesmo que tenha um valor default, a variável other_num pode ser chamada com parâmetros posicionais.
+
+Ainda é possível limitar os parâmetros para que sejam necessariamente chamados de forma posicional ou nomeada. Isto ajuda a aumentar a legibilidade do código.
+
+Exemplos:
+def sum(iterable, \, start=0):
+    total = start or 0
+    for item in iterable:
+        total += item
+    return total
+
+# A \ indica que os parâmetros anteriores 
+# a ela devem ser chamados de forma posicional
+# o parâmetro iterable não pode ser utilizado de forma nomeada
+
+# certo
+sum([1, 2, 3])
+
+# errado
+sum(iterable=[1, 2, 3])
+
+def function(a, b, *, option):
+  print(option)
+
+# certo
+function(1, 2, option=42)
+
+# errado
+function(1, 2, 3)  # o terceiro parâmetro deve ser nomeado 
+
+Quem curtiu reage com :irmao-jorel-feliz: !!

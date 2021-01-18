@@ -1,0 +1,12 @@
+As dicas de hoje estão no formato de vídeos de um amigo querido que é o Luciano Ramalho (para mim um guru de Python).
+
+
+:pino: Palestra do Luciano Ramalho, referência no Brasil da linguagem,  sobre orientação a objetos:  https://www.youtube.com/watch?v=EblOW9nfkNA
+
+
+:pino: Mais uma palestra do Luciano Ramalho sobre como programar OO sem sotaques de outras linguagens: https://www.youtube.com/watch?v=Zhg_uqJXS6Y&ab_channel=pythonbrasil
+
+
+:pino: E para finalizar, uma palestra sobre padrões de projetos: https://www.youtube.com/watch?v=zBkGbGmcl2Q&ab_channel=pythonbrasil
+
+Quem curtiu reage com :irmao-jorel-feliz: !

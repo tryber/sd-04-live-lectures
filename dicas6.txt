@@ -1,0 +1,33 @@
+Seguimos hoje com mais funções builtins  que serão úteis no dia a dia de vocês.
+
+:lâmpada: max
+# A função max quando recebe um único argumento 
+# iterável, retorna o maior elemento do mesmo.
+# Quando recebe mais de um argumento, retorna o 
+# maior valor recebido como argumento
+max([4, 6, 1, 2])  # saída: 6
+
+max(4, 8)  # saída: 8
+
+max(2, 5, 7, 1)  # saída: 7
+
+:lâmpada: min
+# A função min quando recebe um único argumento
+# iterável, retorna o menor elemento do mesmo.
+# Quando recebe mais de um argumento, retorna o
+# menor valor recebido como argumento
+min([4, 6, 1, 2])  # saída: 1
+
+min(4, 8)  # saída: 4
+
+min(2, 5,  7, 1)  # saída: 1
+
+:lâmpada: len
+# Retorna o número de itens em um container.
+len([6, 3, 1, 7])  # saída: 4
+
+len("abc")  # saída: 3
+
+len({2, 3, 4, 5, 7})  # saída: 5
+
+Quem curtiu reage com :py-tha-on: !

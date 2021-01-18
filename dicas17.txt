@@ -1,0 +1,30 @@
+￼:dado_de_jogo: Dataclasses
+
+É um módulo do Python, que provê recursos especias que adicionam automaticamente métodos gerados a uma classe.
+
+Alguns métodos especiais que são adicionados são o __init__ e o __repr__.
+
+Exemplo:
+from dataclasses import dataclass
+
+@dataclass
+class Person:
+    name: str
+    last_name: str
+
+# inicializador é gerado de forma automática 
+# com todos os campos que não possuem valor padrão
+cassio = Person("Cássio", "Botaro")
+gleison = Person("Gleison", "Brito")
+
+# Os objetos possuem uma representação também gerada de forma automática
+print(f"{cassio} e {gleison} possuem uma representação")
+
+# os objetos também são comparáveis (devido a dataclass)
+print(cassio != gleison)
+
+Um vídeo interessante sobre o assunto:
+￼
+https://youtu.be/NtZY3AmsBSk
+
+Quem curtiu reage com :irmao-jorel-feliz: !

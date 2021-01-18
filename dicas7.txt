@@ -1,0 +1,23 @@
+Uma coisa comum em módulos Python é a utilização da variável __name__ como um truque para conseguir rodar um módulo como um script quando necessário. Esse truque pode ser visto em vários módulos da biblioteca padrão.
+
+Para rodar um módulo como um script utilizamos o comando python -m <nome do módulo> .
+
+Alguns interessantes:
+
+:pacote: calendar
+Imprime um calendário de forma amigável.
+Comando:  python -m calendar
+
+:pacote: http.server
+Servidor http simples expondo o conteúdo do diretório.
+Comando: python -m http.server 5000
+
+:pacote: pydoc
+Consulta a documentação  de um determinado módulo.
+Comando: python -m pydoc -b
+
+🧰 Uma lista com vários destes módulos pode ser encontrada aqui.
+
+Quem curtiu reage com :irmao-jorel-feliz: !
+
+Link: folder awesome-python-modules-as-script

@@ -1,0 +1,15 @@
+Que tal complementarmos o conteúdo que vimos hoje sobre deque, analisando o código fonte da linguagem Python?
+
+https://www.laurentluce.com/posts/python-deque-implementation/
+
+Aproveite e dê uma olhadinha também em como funcionam os objetos string, inteiros e dicionários.
+
+Quem curtiu reage com :microscópio:!!
+
+Links:
+
+https://www.laurentluce.com/posts/python-string-objects-implementation/
+
+https://www.laurentluce.com/posts/python-integer-objects-implementation/
+
+https://www.laurentluce.com/posts/python-dictionary-implementation/

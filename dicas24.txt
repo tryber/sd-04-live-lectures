@@ -1,0 +1,5 @@
+:globo_com_meridianos: No módulo de ciência da computação aprendemos a linguagem Python e a utilizamos como ferramenta. De forma a complementar o conhecimento de vocês gostaria de divulgar um material que ensina a como criar uma aplicação web utilizando TDD e configurando integração contínua.
+
+:octocat: folder do_zero_a_implantacao
+
+Quem curtiu reage com :octocat: !

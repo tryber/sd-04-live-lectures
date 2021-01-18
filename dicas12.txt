@@ -1,0 +1,18 @@
+O Python possui uma classe Counter no módulo abc, que é uma especialização do dicionário (dict) e controla quantas vezes os valores equivalentes são adicionados. Em suma, como o nome diz ele mantém o registro dos items como uma chave e o número de vezes que o item aparece como valor.
+
+>>> import collections
+>>> collections.Counter(['a', 'b', 'c', 'a', 'b', 'b'])
+Counter({'b': 3, 'a': 2, 'c': 1})
+>>> counter = collections.Counter()
+>>> counter.update('abcdaab')
+>>> counter
+Counter({'a': 3, 'b': 2, 'c': 1, 'd': 1})
+
+Qualquer classe Iterable  como list, string, set  etc pode ser utilizada para  atualizar ou inicializar um objeto Counter .
+
+Um método interessante desta classe é o most_common que retorna os n  elementos mais comuns deste contador.
+>>> c.most_common(2)
+[('a', 3), ('b', 2)]
+Em outras linguagens esta estrutura pode ser conhecida como Bag ou MultiSet .
+
+Quem curtiu reage com :sacolas_de_compras: !

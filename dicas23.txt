@@ -1,0 +1,17 @@
+Os conjuntos (set), não permitem a repetição de elementos, por exemplo {1, 3, 3, 4}  se transforma em {1, 3, 4} mas será que é possível ter uma variação desta estrutura que armazena itens repetidos?
+
+:fichário: Multisets
+
+Multisets, ou multiconjuntos, são uma variação de conjuntos que permitem o armazenamento de elementos repetidos. Vocês podem encontrar esta estrutura com o nome Bag.
+
+A implementação desta estrutura em Python se dá através do Counter presente na biblioteca padrão collections .
+from collections import Counter
+
+numbers = Counter([1, 3, 3, 3, 4, 4])
+print(numbers)  # Counter({3: 3, 4: 2, 1: 1})
+
+ingredients = Counter({"pão": 10, "bife": 20})
+print(len(ingredients))  # número de ingredientes (2)
+print(sum(ingredients.values()))  # número total de ingredientes no conjunto (30)
+
+Quem curtiu reage com :sacolas_de_compras: !

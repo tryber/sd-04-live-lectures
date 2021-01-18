@@ -1,0 +1,33 @@
+A linguagem Python possui um mecanismo conhecido como atribuição múltipla, que nos permite atribuir valores a várias variáveis ao mesmo tempo. Esse desempacotamento acontece da seguinte maneira: quando encontra uma variável à direita da atribuição e múltiplas variáveis a esquerda, o interpretador irá atribuir cada valor da estrutura iterável a uma variável diferente do lado esquerdo. Podemos utilizar também o caractere * para indicar que naquela variável receberemos todos os outros valores.
+
+# Desempacotamento
+
+a, b = "ab"
+print(a)  # saída: 'a'
+print(b)  # saída: 'b'
+
+a, b = 1, 2
+print(a)  # saída: 1
+print(b)  # saída: 2
+
+a, b, *rest = range(10)
+# o primeiro valor da estrutura é atribuido a a
+print(a)     # saída: 0
+# o segundo valor da estrutura é atribuido a b
+print(b)     # saída: 1
+# por causa do *, todo o resto é atribuido a rest
+print(rest)  # saída: [2, 3, 4, 5, 6, 7, 8, 9]
+
+# outro exemplo
+
+a, *rest, b = range(10)
+print(rest)  # saída: [1, 2, 3, 4, 5, 6, 7, 8]
+# o primeiro valor da estrutura é atribuido a a
+print(a)     # saída: 0
+# o último valor da estrutura é atribuido a b
+print(b)     # saída: 9
+
+# trocando os valores de duas variáveis
+a, b = b, a
+
+Quem curtiu reage com :py-tha-on: !

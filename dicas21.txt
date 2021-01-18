@@ -1,0 +1,24 @@
+Crianças, tomem cuidado ao utilizar este recurso!
+
+Desde a versão 3.0, a linguagem Python aceita identificadores não ascii. Isto significa que podemos declarar uma variável com o nome ação ou paçoca.
+
+Pode ser útil para auxiliar no ensino de programação na linguagem nativa da pessoa.
+
+Para maiores detakhes, veja este documento.
+
+Abaixo um exemplo de código utilizando este recurso:
+
+def Σ(lower_bound, upper_bound, function):
+    '''Summation is a math operator to easily represent a great sum of terms,
+    even infinity.
+    It's represented with the greek letter sigma.
+    Sum terms from lower_bound until upper_bound, applying some function on
+    each term.
+    >>> Σ(1,5,lambda x:x)  # 1 + 2 + 3 + 4 + 5 = 15
+    15
+    '''
+    return sum(function(index) for index in range(lower_bound, upper_bound + 1))
+
+Quem curtiu reage com :mão_do_spock:!
+
+Link: https://www.python.org/dev/peps/pep-3131/
