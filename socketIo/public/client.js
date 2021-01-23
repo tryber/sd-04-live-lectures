@@ -20,4 +20,19 @@ window.onload = () => {
     divUsers.append(li)
   });
 
+  clientSocketIo.on('message', (message) => {
+    const allMessages = document.getElementById('messages')
+    console.log(allMessages)
+    const p = document.createElement('p');
+      p.textContent = message;
+
+    allMessages.appendChild(p)
+  });
+
+  document.getElementById('send').addEventListener('click', () => {
+    const message = document.getElementById('message').value;
+    const name = document.querySelectorAll('li[data-name="user-online"]')[0].innerText;
+    clientSocketIo.emit('message', { name, message });
+  });
+
 }
