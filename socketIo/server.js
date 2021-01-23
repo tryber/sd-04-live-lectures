@@ -15,6 +15,7 @@ io.on('connection', (socket) => {
   socket.user = { nickname: faker.name.firstName() };
 
   // Explicado a diferença durate a revisão 
+  // Ainda precisa melhorar isto, não funciona para os casos do checklist no readme.md
   socket.emit('myNickname', socket.user.nickname)
   socket.broadcast.emit('newUser', socket.user.nickname);
   //io.emit('newUser', socket.user.nickname);
