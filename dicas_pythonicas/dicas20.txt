@@ -1,5 +1,0 @@
-Para complementar os estudos sobre algoritmos de ordenação, veja esse documento que consta no repositório da linguagem Python.
-
-:lâmpada: https://github.com/python/cpython/blob/master/Objects/listsort.txt
-
-Quem curtiu reage com :irmao-jorel-feliz: !
