@@ -1,5 +1,0 @@
-Dica Pythonica de Natal
-
-É apenas 1 linha, mas gostaria que compartilhassem uma mensagem com a turma. Executem o código abaixo e depois colem a saída como comentário aqui.
-
-(lambda width: print('{tree}\n{root}\n\n{message}\n'.format(tree='\n'.join('{}'.format(('★' * stars).center(width, '.')) for stars in range(1, width, 2)), root='▓'.center(width), message=input("What's your christmas message? ").center(width))))(2 * int(input('How big is your tree?(E.g. 5) ')))

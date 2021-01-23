@@ -1,26 +1,24 @@
-# Repositorio de aulas ao vivo para estudante da turma 4
+# Revisão de Socket.io
 
-Este repositório armazena os códigos e scripts fornecidos durante as palestras ao vivo pelos especialistas da Trybe.
+Aqui fizemos uma pequena aplicação utilizando Socket.io. Este código ainda não funciona 100% corretamente (**de forma proposital**).
+Ao final tem um checklist do que poderia ser feito para melhorar.
 
-## Começando
+## Iniciando aplicação
 
-Basta clonar o repositorio
+Dentro do diretório `sockeIo` esta o código produzido durante a revisão de socket.io com um *plus* de envio de mensagem. Para executar o código siga os passos:
 
-```sh
-git clone git@github.com:tryber/sd-04-live-lectures.git
+```
+  // Instalar as dependências do projeto
+  npm install
 ```
 
-Em seguida acessar a branch do Pull Request da aula seguindo o padrão de nomeclatura das branchs **live-lectures/(nome-branch-aula)**
-
-Exemplo:
-```sh
-git checkout -b live-lectures/es6-part3
+```
+  // Na raiz do projeto
+  npm start
 ```
 
----
+## Pontos de melhoria
 
-### Estrutura
-
-Todo conteudo dado em aulas estara no seu respectivo Pull Request!
-
----
+  - [ ] Quando uma nova pessoa usuária entrar, deve-se receber a lista de pessoas online;
+  - [ ] Quando uma pessoa usuária sair, deve-se atualizar a lista de pessoas online;
+  - [ ] A pessoa atual sempre deve ter seu nome como primeiro da primeiro da lista;

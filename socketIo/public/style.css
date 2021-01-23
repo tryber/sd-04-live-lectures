@@ -1,0 +1,11 @@
+#main {
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+}
+
+#messages {
+  width: 40%;
+  min-height: 10vh;
+  border: 1px solid #000;
+}
