@@ -20,6 +20,10 @@ io.on('connection', (socket) => {
   socket.broadcast.emit('newUser', socket.user.nickname);
   //io.emit('newUser', socket.user.nickname);
 
+  socket.on('message', async ({ name, message }) => {
+    io.emit('message', `${name}: ${message}`);
+  });
+
 });
 
 httpServer.listen(3000, () => console.log('RUN SERVER 127.0.0.1:3000'));
