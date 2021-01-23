@@ -1,6 +1,6 @@
 # Revisão de Socket.io
 
-Aqui fizemos uma pequena aplicação utilizando Socket.io. Este código ainda não funciona 100% corretemante (**de forma proposital**).
+Aqui fizemos uma pequena aplicação utilizando Socket.io. Este código ainda não funciona 100% corretamente (**de forma proposital**).
 Ao final tem um checklist do que poderia ser feito para melhorar.
 
 ## Iniciando aplicação
@@ -21,4 +21,4 @@ Dentro do diretório `sockeIo` esta o código produzido durante a revisão de so
 
   - [ ] Quando uma nova pessoa usuária entrar, deve-se receber a lista de pessoas online;
   - [ ] Quando uma pessoa usuária sair, deve-se atualizar a lista de pessoas online;
-  - [ ] A pessoa atual sempre dever seu o nome como primeiro da primeiro da lista;
+  - [ ] A pessoa atual sempre deve ter seu nome como primeiro da primeiro da lista;
