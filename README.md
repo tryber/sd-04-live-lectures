@@ -4,23 +4,5 @@ Este repositório armazena os códigos e scripts fornecidos durante as palestras
 
 ## Começando
 
-Basta clonar o repositorio
-
-```sh
-git clone git@github.com:tryber/sd-04-live-lectures.git
-```
-
-Em seguida acessar a branch do Pull Request da aula seguindo o padrão de nomeclatura das branchs **live-lectures/(nome-branch-aula)**
-
-Exemplo:
-```sh
-git checkout -b live-lectures/es6-part3
-```
-
----
-
-### Estrutura
-
-Todo conteudo dado em aulas estara no seu respectivo Pull Request!
-
----
+Neste exemplo temos uma `model` que conversa com o aquivo `simpleConnection` para
+realizar consultas utilizando `join` na lib `@mysql/xdevapi`.
