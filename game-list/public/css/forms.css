@@ -1,0 +1,54 @@
+form {
+  background-color: #fff;
+  box-shadow: 1px 1px 2px 1px rgba(0 , 0 , 0 , 0.2);
+  min-height: 400px;
+  margin: 20px auto;
+  padding: 20px 40px;
+  width: 450px;
+}
+
+input {
+  border: none;
+  box-shadow: 1px 1px 2px 1px rgba(0 , 0 , 0 , 0.2);
+  height: 35px;
+  margin: 5px;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.input--small {
+  margin-right: 10px;
+  width: 75%;
+}
+
+.input--not-border {
+  border: none;
+  box-shadow: none;
+}
+
+.input--not-border:hover , .input--not-border:focus { border: none; }
+
+input:hover , input:focus , textarea:hover , textarea:focus {
+  border: 1px solid  rgb(0 , 209 , 178);
+  outline: rgb(0 , 209 , 178);
+  transform: scale(1.05 , 1.05);
+}
+
+button {
+  font-size: 1.2em;
+  border: none;
+  width: 100%;
+  height: 45px;
+  transition: all .3s ease-in-out;
+}
+
+.button--small {
+  width: 45px;
+  height: 45px;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(0.9, 0.9);
+}

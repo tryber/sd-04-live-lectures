@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Game</title>
+
+  <link rel="stylesheet" href="/css/geral.css">
+  <link rel="stylesheet" href="/css/forms.css">
+
+</head>
+<body>
+  <main class="container">
+    <% if(!data) { %>
+      <h1 class="text--center bd--red m--20 p--20 text--white">Erro ao carregar !</h1>
+    <% } else { %>
+      <form action="/updateGame/<%= data.idGame %>" method="post">
+        <h1 >Nome: <%= data.userName %></h1>
+        <input type="hidden" name="idGame" value="<%= data.idGame %>">
+        <input type="hidden" name="idUser" value="<%= data.userId %>">
+        <input type="hidden" name="userName" value="<%= data.userName %>">
+        <ul>
+          <% data.title.split(',').forEach( game => { %>
+            <li class="m--t-10">
+              <input class="input--small input--not-border" type="text" name="game[]" id="<%= game %>" value="<%= game %>">
+              <button class="button--small bd--red text--white" type="button" onclick="dropList('<%= game %>')">X</button>
+            </li>
+          <% }); %>
+        </ul>
+
+        <div class="m--t-20">
+          <input class="input--small" type="text" id="inpAddGame" placeholder="Nome do game...">
+          <button class="button--small bd--blue text--white" type="button" onclick="add()">+</button>
+        </div>
+
+        <button class="m--t-20 bd--green text--white" type="submit">Enviar</button>
+      </form>
+    <% } %>
+  </main>
+
+  <script src="/js/addDropElements.js"></script>
+</body>
+</html>
